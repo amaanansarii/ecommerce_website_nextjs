@@ -2,7 +2,7 @@ import Image from "next/image";
 import { stripe } from "@/lib/stripe";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Carousel from "@/components/carousel";
+import { Carousel } from "@/components/carousel";
 
 export default async function Home() {
   const products = await stripe.products.list({
@@ -44,7 +44,7 @@ export default async function Home() {
         </div>
       </section>
       <section className="py-8">
-        <Carousel  />
+        <Carousel products={products.data} />
       </section>
     </div>
   );
