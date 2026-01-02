@@ -15,8 +15,8 @@ export default function ProductList({ products }: Props) {
             </div>
 
             <ul>
-                {products.map((products) => {
-                    return <li><ProductCard product={products}></ProductCard></li>
+                {products.map((products, key) => {
+                    return <li key={key}><ProductCard product={products}></ProductCard></li>
                 })}
             </ul>
         </div>
