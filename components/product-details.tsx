@@ -7,6 +7,8 @@ interface Props {
 }
 export default function ProductDetails({ product }: Props){
 
+    
+
     const price = product.default_price as Stripe.Price;
 
     return <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center">
