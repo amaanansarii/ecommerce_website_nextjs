@@ -47,13 +47,36 @@ export function Navbar(){
             )}
           </Link>
 
-          <Button variant={"ghost"} onClick={() => setMobileOpen((prev) => !prev)}>
-            {mobileOpen ? (<XMarkIcon/>) : <Bars3Icon/>}
+          <Button className="md:hidden" variant={"ghost"} onClick={() => setMobileOpen((prev) => !prev)}>
+            {mobileOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
           </Button>
-
         </div>
             </div>
-            
+           {mobileOpen && (
+        <nav className="md:hidden bg-white shadow-md">
+          <ul className="flex flex-col p-4 space-y-2">
+            <li>
+              <Link href="/" className="block hover:text-blue-600">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="block hover:text-blue-600">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link href="/checkout" className="block hover:text-blue-600">
+                Checkout
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
         </nav>
     )
 }
