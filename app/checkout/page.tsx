@@ -41,7 +41,7 @@ export default function ChecoutPage() {
             –
           </Button>
           <span className="text-lg font-semibold">{item.quantity}</span>
-          <Button onClick={() => addItem(item)}>+</Button>
+          <Button onClick={() => addItem({...item, quantity: 1})}>+</Button>
                 </div>
             </li>
           ))}
